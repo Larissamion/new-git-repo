@@ -43,7 +43,7 @@ This application requires a modern browser with support for:
 
 ## License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is open source and available under The [MIT License](LICENSE).
 
 ## Contributing
 
