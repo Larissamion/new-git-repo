@@ -2,9 +2,127 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>new-git-repo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Text Encryptor</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        textarea {
+            width: 100%;
+            min-height: 150px;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            resize: vertical;
+            font-family: monospace;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        .btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        .btn-danger {
+            background-color: #e74c3c;
+        }
+        .btn-danger:hover {
+            background-color: #c0392b;
+        }
+        .btn-group {
+            margin: 20px 0;
+            display: flex;
+            gap: 10px;
+        }
+        .copy-btn {
+            background-color: #2ecc71;
+        }
+        .copy-btn:hover {
+            background-color: #27ae60;
+        }
+        .key-input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .status {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            display: block;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            display: block;
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <h1>🔒 Secure Text Encryptor</h1>
+        
+        <div class="input-group">
+            <label for="text-input">Enter your text:</label>
+            <textarea id="text-input" placeholder="Type or paste your sensitive information here..."></textarea>
+        </div>
 
+        <div class="input-group">
+            <label for="key-input">Encryption Key (keep this safe!):</label>
+            <input type="text" id="key-input" class="key-input" placeholder="Enter a secret key for encryption/decryption">
+            <small>Note: Use the same key to encrypt and decrypt your message</small>
+        </div>
+
+        <div class="btn-group">
+            <button id="encrypt-btn" class="btn">🔐 Encrypt</button>
+            <button id="decrypt-btn" class="btn">🔓 Decrypt</button>
+            <button id="copy-btn" class="btn copy-btn" disabled>📋 Copy to Clipboard</button>
+            <button id="clear-btn" class="btn btn-danger">🗑️ Clear</button>
+        </div>
+
+        <div id="result-group" class="input-group" style="display: none;">
+            <label for="result-output">Result:</label>
+            <textarea id="result-output" readonly aria-label="Encryption or decryption result"></textarea>
+        </div>
+
+        <div id="status" class="status"></div>
+    </div>
+
+    <script src="encrypt.js"></script>
 </body>
 </html>
